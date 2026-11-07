@@ -1,0 +1,8 @@
+Variable,Modelo_1,Modelo_2
+Endeudamiento (%),-0.2919***,-0.2891***
+Error estándar robusto,(0.0046),(0.0046)
+Tamaño empresarial,-,4.1692***
+Error estándar robusto tamaño,-,(0.0707)
+Controles sectoriales,No,Sí
+R cuadrado,0.3458,0.3693
+Observaciones,145034,145033

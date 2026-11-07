@@ -2,3 +2,28 @@
 .Rhistory
 .RData
 .Ruserdata
+
+# Archivos temporales y respaldos
+*.bak
+*.tmp
+
+# Bases de datos financieras
+*.rds
+*.RData
+*.xlsx
+
+# Archivos generados por Quarto
+.quarto/
+*_files/
+
+# Archivos temporales del sistema
+Thumbs.db
+.DS_Store
+01_datos_financieros/
+*.bak
+*_respaldo.bib
+*_respaldo_pdf.qmd
+*_antes_citas.qmd
+*.typ
+.quarto/
+*_files/

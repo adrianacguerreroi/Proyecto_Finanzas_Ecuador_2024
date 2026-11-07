@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="José Ordóñez, Lisbeth Jiménez, Adriana Guerrero">
+
+<title>¿Crecer o quebrar? El papel del endeudamiento en la rentabilidad de las empresas ecuatorianas</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="articulo_finanzas_files/libs/clipboard/clipboard.min.js"></script>
+<script src="articulo_finanzas_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="articulo_finanzas_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="articulo_finanzas_files/libs/quarto-html/popper.min.js"></script>
+<script src="articulo_finanzas_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="articulo_finanzas_files/libs/quarto-html/anchor.min.js"></script>
+<link href="articulo_finanzas_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="articulo_finanzas_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="articulo_finanzas_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="articulo_finanzas_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="articulo_finanzas_files/libs/bootstrap/bootstrap-62e2d20df198e8a01bb734742f2e28cf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#resumen" id="toc-resumen" class="nav-link active" data-scroll-target="#resumen">Resumen</a></li>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link" data-scroll-target="#introducción"><span class="header-section-number">1</span> Introducción</a></li>
+  <li><a href="#revisión-de-literatura" id="toc-revisión-de-literatura" class="nav-link" data-scroll-target="#revisión-de-literatura"><span class="header-section-number">2</span> Revisión de literatura</a>
+  <ul class="collapse">
+  <li><a href="#antecedentes-teóricos" id="toc-antecedentes-teóricos" class="nav-link" data-scroll-target="#antecedentes-teóricos"><span class="header-section-number">2.1</span> Antecedentes teóricos</a></li>
+  <li><a href="#evidencia-empírica" id="toc-evidencia-empírica" class="nav-link" data-scroll-target="#evidencia-empírica"><span class="header-section-number">2.2</span> Evidencia empírica</a></li>
+  </ul></li>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link" data-scroll-target="#objetivos"><span class="header-section-number">3</span> Objetivos</a>
+  <ul class="collapse">
+  <li><a href="#objetivo-general" id="toc-objetivo-general" class="nav-link" data-scroll-target="#objetivo-general"><span class="header-section-number">3.1</span> Objetivo general</a></li>
+  <li><a href="#objetivos-específicos" id="toc-objetivos-específicos" class="nav-link" data-scroll-target="#objetivos-específicos"><span class="header-section-number">3.2</span> Objetivos específicos</a></li>
+  </ul></li>
+  <li><a href="#datos-y-metodología" id="toc-datos-y-metodología" class="nav-link" data-scroll-target="#datos-y-metodología"><span class="header-section-number">4</span> Datos y metodología</a>
+  <ul class="collapse">
+  <li><a href="#fuente-de-información" id="toc-fuente-de-información" class="nav-link" data-scroll-target="#fuente-de-información"><span class="header-section-number">4.1</span> Fuente de información</a></li>
+  <li><a href="#variables-e-indicadores-financieros" id="toc-variables-e-indicadores-financieros" class="nav-link" data-scroll-target="#variables-e-indicadores-financieros"><span class="header-section-number">4.2</span> Variables e indicadores financieros</a></li>
+  <li><a href="#modelo-econométrico" id="toc-modelo-econométrico" class="nav-link" data-scroll-target="#modelo-econométrico"><span class="header-section-number">4.3</span> Modelo econométrico</a></li>
+  </ul></li>
+  <li><a href="#resultados-y-análisis" id="toc-resultados-y-análisis" class="nav-link" data-scroll-target="#resultados-y-análisis"><span class="header-section-number">5</span> Resultados y análisis</a>
+  <ul class="collapse">
+  <li><a href="#diagnóstico-financiero" id="toc-diagnóstico-financiero" class="nav-link" data-scroll-target="#diagnóstico-financiero"><span class="header-section-number">5.1</span> Diagnóstico financiero</a></li>
+  <li><a href="#diagnóstico-sectorial" id="toc-diagnóstico-sectorial" class="nav-link" data-scroll-target="#diagnóstico-sectorial"><span class="header-section-number">5.2</span> Diagnóstico sectorial</a></li>
+  <li><a href="#diagnóstico-empresarial" id="toc-diagnóstico-empresarial" class="nav-link" data-scroll-target="#diagnóstico-empresarial"><span class="header-section-number">5.3</span> Diagnóstico empresarial</a></li>
+  <li><a href="#resultados-econométricos" id="toc-resultados-econométricos" class="nav-link" data-scroll-target="#resultados-econométricos"><span class="header-section-number">5.4</span> Resultados econométricos</a></li>
+  <li><a href="#pruebas-de-robustez" id="toc-pruebas-de-robustez" class="nav-link" data-scroll-target="#pruebas-de-robustez"><span class="header-section-number">5.5</span> Pruebas de robustez</a></li>
+  </ul></li>
+  <li><a href="#discusión" id="toc-discusión" class="nav-link" data-scroll-target="#discusión"><span class="header-section-number">6</span> Discusión</a></li>
+  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones"><span class="header-section-number">7</span> Conclusiones</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="articulo_finanzas.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">¿Crecer o quebrar? El papel del endeudamiento en la rentabilidad de las empresas ecuatorianas</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>José Ordóñez, Lisbeth Jiménez, Adriana Guerrero </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="resumen" class="level1 unnumbered">
+<h1 class="unnumbered">Resumen</h1>
+<p>¿Hasta qué punto el endeudamiento representa una oportunidad de crecimiento o un riesgo para la rentabilidad empresarial? Esta investigación examina la relación entre el endeudamiento y la rentabilidad de las empresas ecuatorianas durante 2024, utilizando información financiera de 145.034 empresas registrada por la Superintendencia de Compañías, Valores y Seguros del Ecuador. Mediante un enfoque cuantitativo, se desarrolla un análisis financiero, sectorial y empresarial, complementado con modelos econométricos de mínimos cuadrados ordinarios (MCO) y errores estándar robustos. Los resultados evidencian una relación negativa y estadísticamente significativa entre el endeudamiento y la rentabilidad sobre activos (ROA). En el modelo principal, que incorpora controles por tamaño empresarial y actividad económica, el coeficiente estimado es de -0,2891. Asimismo, las empresas con endeudamiento superior al 100 % presentan una rentabilidad mediana de -12,74 %, mientras que aquellas con endeudamiento positivo de hasta el 50 % alcanzan el 3,43 %. Las pruebas de robustez mantienen la relación negativa, aunque muestran variaciones importantes en su magnitud. Los hallazgos sugieren que el endeudamiento elevado se asocia con resultados financieros más desfavorables, sin establecer una relación causal.</p>
+<p><strong>Palabras clave:</strong> endeudamiento empresarial, rentabilidad financiera, estructura de capital, rentabilidad sobre activos (ROA), análisis econométrico.</p>
+</section>
+<section id="introducción" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introducción</h1>
+<p>El endeudamiento representa una decisión importante para las empresas, ya que permite financiar sus actividades, realizar inversiones y aprovechar oportunidades de crecimiento. Sin embargo, asumir obligaciones financieras también implica compromisos que pueden afectar los resultados económicos cuando los recursos disponibles no son suficientes para responder a ellos. Por esta razón, resulta necesario analizar hasta qué punto el financiamiento mediante deuda se relaciona con la rentabilidad empresarial.</p>
+<p>La relación entre endeudamiento y rentabilidad ha sido estudiada desde diferentes perspectivas. <span class="citation" data-cites="abor_effect_2005">Abor (<a href="#ref-abor_effect_2005" role="doc-biblioref">2005</a>)</span>, al analizar empresas de Ghana, encontró que los resultados varían según la composición de la deuda, identificando relaciones positivas y negativas dependiendo de su plazo. Esta evidencia muestra que el endeudamiento no necesariamente se relaciona de la misma manera con la rentabilidad en todas las empresas.</p>
+<p>En Ecuador, las empresas pertenecen a distintos sectores económicos y presentan diferencias en sus activos, obligaciones y resultados financieros. Estas características hacen relevante estudiar si las empresas con mayores niveles de endeudamiento también presentan diferencias en su capacidad para generar rentabilidad. El análisis de los estados financieros permite examinar esta relación mediante indicadores que reflejan la estructura de financiamiento y el rendimiento obtenido sobre los activos.</p>
+<p>En este contexto, la presente investigación plantea la siguiente pregunta: ¿qué relación existe entre el endeudamiento y la rentabilidad de las empresas ecuatorianas durante 2024? Para responderla, se utilizan los estados financieros de 145.034 empresas registrados por la Superintendencia de Compañías, Valores y Seguros del Ecuador. Se desarrolla un análisis descriptivo, sectorial y empresarial, complementado con estimaciones econométricas de mínimos cuadrados ordinarios.</p>
+<p>El estudio busca aportar evidencia sobre la asociación entre el endeudamiento y la rentabilidad empresarial, considerando las diferencias de tamaño y actividad económica. Asimismo, permite identificar comportamientos financieros que pueden resultar relevantes para comprender la situación de las empresas ecuatorianas durante 2024, sin atribuir una relación causal a los resultados obtenidos.</p>
+</section>
+<section id="revisión-de-literatura" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Revisión de literatura</h1>
+<section id="antecedentes-teóricos" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="antecedentes-teóricos"><span class="header-section-number">2.1</span> Antecedentes teóricos</h2>
+<p>La relación entre el endeudamiento y el desempeño empresarial puede analizarse a partir de la teoría de la estructura de capital. Modigliani y Miller <span class="citation" data-cites="modigliani_cost_1958">(<a href="#ref-modigliani_cost_1958" role="doc-biblioref">1958</a>)</span> plantearon que, bajo condiciones ideales de mercado, el valor de una empresa no depende de la combinación de deuda y capital propio utilizada para financiar sus actividades. Este planteamiento constituye un punto de partida para comprender por qué las decisiones de financiamiento adquieren importancia cuando existen impuestos, costos financieros y otras imperfecciones del mercado.</p>
+<p>La teoría del equilibrio o Trade-off constituye otro enfoque para comprender las decisiones de financiamiento empresarial. Myers <span class="citation" data-cites="myers_capital_1984">(<a href="#ref-myers_capital_1984" role="doc-biblioref">1984</a>)</span> explica que las empresas pueden buscar un nivel de endeudamiento que permita aprovechar los beneficios tributarios de la deuda, considerando al mismo tiempo los costos asociados a posibles dificultades financieras. Desde esta perspectiva, el endeudamiento puede representar una alternativa para financiar las actividades empresariales, pero su utilización excesiva también puede incrementar los riesgos y afectar el desempeño económico. Este planteamiento resulta relevante para analizar la relación entre endeudamiento y rentabilidad en las empresas ecuatorianas durante 2024.</p>
+<p>La teoría de la jerarquía financiera, conocida como Pecking Order, ofrece otra explicación sobre las decisiones de financiamiento. Myers y Majluf <span class="citation" data-cites="myers_corporate_1984">(<a href="#ref-myers_corporate_1984" role="doc-biblioref">1984</a>)</span> analizan cómo las diferencias de información entre los administradores y los inversionistas pueden influir en la elección de las fuentes de financiamiento. Desde este enfoque, las empresas tienden a preferir los recursos generados internamente, seguidos del endeudamiento y, finalmente, de la emisión de acciones. Esta teoría permite comprender que las decisiones de recurrir a deuda no dependen únicamente de sus costos, sino también de la disponibilidad de recursos propios y de las condiciones de financiamiento. Por ello, constituye una base teórica para estudiar las diferencias de endeudamiento entre las empresas ecuatorianas durante 2024.</p>
+</section>
+<section id="evidencia-empírica" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="evidencia-empírica"><span class="header-section-number">2.2</span> Evidencia empírica</h2>
+<p>La evidencia empírica sobre endeudamiento y rentabilidad muestra que esta relación puede variar según la composición de la deuda y las características de las empresas. Abor <span class="citation" data-cites="abor_effect_2005">(<a href="#ref-abor_effect_2005" role="doc-biblioref">2005</a>)</span> analizó empresas cotizadas en Ghana y encontró una relación positiva entre la deuda de corto plazo y la rentabilidad, mientras que la deuda de largo plazo presentó una relación negativa. Estos resultados sugieren que no basta con considerar el nivel total de endeudamiento, sino que también resulta importante examinar cómo se estructura el financiamiento. Para el caso ecuatoriano, este antecedente permite contextualizar el análisis de la relación entre el endeudamiento total y la rentabilidad empresarial en 2024, aunque nuestro estudio no distingue entre deuda de corto y largo plazo.</p>
+<p>La evidencia internacional también destaca la importancia de las características empresariales en las decisiones de financiamiento. Rajan y Zingales <span class="citation" data-cites="rajan_what_1995">(<a href="#ref-rajan_what_1995" role="doc-biblioref">1995</a>)</span> examinaron la estructura de capital de empresas pertenecientes a siete países industrializados y encontraron que factores como el tamaño empresarial, la rentabilidad y la composición de los activos se relacionan con las diferencias en los niveles de endeudamiento. Este estudio permite comprender que las decisiones financieras no dependen únicamente de la disponibilidad de crédito, sino también de las características de cada empresa. Para nuestra investigación sobre Ecuador en 2024, constituye un antecedente relevante para considerar el tamaño empresarial y las diferencias sectoriales al analizar la relación entre endeudamiento y rentabilidad.</p>
+<p>Le y Phan <span class="citation" data-cites="le_capital_2017">(<a href="#ref-le_capital_2017" role="doc-biblioref">2017</a>)</span> analizaron empresas no financieras de Vietnam y encontraron una relación negativa entre el endeudamiento y el desempeño empresarial. Este resultado muestra que un mayor nivel de deuda no necesariamente se relaciona con una mejor rentabilidad.</p>
+<p>Margaritis y Psillaki <span class="citation" data-cites="margaritis_efficiency_2007">(<a href="#ref-margaritis_efficiency_2007" role="doc-biblioref">2007</a>)</span> estudiaron empresas de Nueva Zelanda y analizaron la relación entre endeudamiento y eficiencia empresarial. Posteriormente, estos autores <span class="citation" data-cites="margaritis_ownership_2010">(<a href="#ref-margaritis_ownership_2010" role="doc-biblioref">2010</a>)</span> examinaron empresas manufactureras francesas y destacaron la importancia de la estructura de capital y la propiedad empresarial para comprender las diferencias en el desempeño.</p>
+<p>Berger y Bonaccorsi di Patti <span class="citation" data-cites="berger_capital_2006">(<a href="#ref-berger_capital_2006" role="doc-biblioref">2006</a>)</span> analizaron el sector bancario y encontraron evidencia de que un mayor apalancamiento puede relacionarse con una mayor eficiencia de beneficios. Este resultado muestra que la relación entre deuda y desempeño puede variar según las características del sector.</p>
+<p>Mallick y Yang <span class="citation" data-cites="mallick_financing_2011">(<a href="#ref-mallick_financing_2011" role="doc-biblioref">2011</a>)</span> estudiaron empresas de distintos países y analizaron cómo las fuentes de financiamiento se relacionan con la rentabilidad y la productividad. Su investigación permite considerar que el origen de los recursos financieros también puede influir en las diferencias observadas entre empresas.</p>
+<p>González <span class="citation" data-cites="gonzalez_leverage_2013">(<a href="#ref-gonzalez_leverage_2013" role="doc-biblioref">2013</a>)</span> analizó empresas de distintos países y encontró que un mayor endeudamiento puede relacionarse con un menor desempeño durante las caídas de los sectores económicos. Esto permite comprender que las condiciones económicas también son importantes para interpretar los resultados financieros.</p>
+<p>Davydov <span class="citation" data-cites="davydov_debt_2016">(<a href="#ref-davydov_debt_2016" role="doc-biblioref">2016</a>)</span> examinó empresas de mercados emergentes y estudió las diferencias entre el financiamiento bancario y otras formas de deuda. Sus resultados muestran la importancia de considerar la composición del endeudamiento al analizar el desempeño empresarial.</p>
+<p>Chadha y Sharma <span class="citation" data-cites="chadha_capital_2016">(<a href="#ref-chadha_capital_2016" role="doc-biblioref">2016</a>)</span> analizaron empresas manufactureras de India mediante indicadores como ROA, ROE y Q de Tobin. Este antecedente es importante porque utiliza medidas de rentabilidad similares a las consideradas en nuestra investigación.</p>
+<p>Nguyen y colaboradores <span class="citation" data-cites="nguyen_relationship_2023">(<a href="#ref-nguyen_relationship_2023" role="doc-biblioref">2023</a>)</span> estudiaron empresas cotizadas de Vietnam y analizaron la relación entre la estructura de capital y la rentabilidad. Su investigación aporta evidencia adicional sobre cómo las decisiones de financiamiento pueden relacionarse con los resultados empresariales.</p>
+<p>En conjunto, estas investigaciones muestran que la relación entre endeudamiento y rentabilidad no es igual en todos los países ni sectores. Para nuestro estudio de Ecuador en 2024, estos antecedentes ayudan a interpretar la asociación negativa encontrada entre endeudamiento y ROA, sin afirmar que exista necesariamente una relación causal.</p>
+</section>
+</section>
+<section id="objetivos" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Objetivos</h1>
+<section id="objetivo-general" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="objetivo-general"><span class="header-section-number">3.1</span> Objetivo general</h2>
+<p>Analizar la relación entre el endeudamiento y la rentabilidad de las empresas ecuatorianas durante 2024, mediante indicadores financieros y modelos econométricos, considerando las diferencias de tamaño empresarial y actividad económica.</p>
+</section>
+<section id="objetivos-específicos" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="objetivos-específicos"><span class="header-section-number">3.2</span> Objetivos específicos</h2>
+<ol type="1">
+<li>Describir los niveles de endeudamiento y rentabilidad de las empresas ecuatorianas durante 2024, identificando diferencias según el sector económico y el tamaño empresarial.</li>
+<li>Estimar la relación entre el endeudamiento y la rentabilidad sobre activos (ROA) mediante modelos de mínimos cuadrados ordinarios, incorporando controles empresariales y pruebas de robustez.</li>
+</ol>
+</section>
+</section>
+<section id="datos-y-metodología" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Datos y metodología</h1>
+<section id="fuente-de-información" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="fuente-de-información"><span class="header-section-number">4.1</span> Fuente de información</h2>
+<p>La investigación utiliza información financiera correspondiente al año 2024, obtenida de los estados financieros registrados en la Superintendencia de Compañías, Valores y Seguros del Ecuador. La base de datos comprende 145.034 empresas ecuatorianas pertenecientes a diferentes actividades económicas y tamaños empresariales. Esta información permite examinar las diferencias en los niveles de endeudamiento y rentabilidad, a partir de los resultados financieros reportados por las empresas durante el período de estudio.</p>
+</section>
+<section id="variables-e-indicadores-financieros" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="variables-e-indicadores-financieros"><span class="header-section-number">4.2</span> Variables e indicadores financieros</h2>
+<p>La investigación considera como variable dependiente la rentabilidad sobre activos (ROA), que permite conocer el resultado financiero obtenido por las empresas en relación con sus activos totales. Este indicador se calcula dividiendo el resultado del ejercicio (cuenta 707) para el activo total (cuenta 1) y multiplicando el resultado por 100.</p>
+<p><span class="math display">\[
+ROA = \frac{\text{Resultado del ejercicio}}{\text{Activo total}} \times 100
+\]</span></p>
+<p>Como variable independiente se utiliza el endeudamiento empresarial, que representa la proporción de los activos financiada mediante obligaciones con terceros. Se calcula dividiendo el pasivo total (cuenta 2) para el activo total (cuenta 1) y multiplicando por 100.</p>
+<p><span class="math display">\[
+Endeudamiento = \frac{\text{Pasivo total}}{\text{Activo total}} \times 100
+\]</span></p>
+<p>Adicionalmente, se consideran las diferencias de tamaño empresarial y actividad económica para analizar la relación entre endeudamiento y rentabilidad. La actividad económica se identifica mediante la clasificación sectorial disponible en la base financiera.</p>
+</section>
+<section id="modelo-econométrico" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="modelo-econométrico"><span class="header-section-number">4.3</span> Modelo econométrico</h2>
+<p>Para examinar la relación entre el endeudamiento y la rentabilidad empresarial se estimaron modelos de mínimos cuadrados ordinarios (MCO). El primer modelo considera únicamente el endeudamiento como variable explicativa, mientras que el segundo incorpora el tamaño empresarial y controles por actividad económica. Este último constituye la especificación principal de la investigación.</p>
+<p><span class="math display">\[
+ROA_i = \beta_0 + \beta_1 END_i + \beta_2 TAM_i + \sum_{s=1}^{S-1} \gamma_s SECTOR_{is} + \varepsilon_i
+\]</span></p>
+<p>En esta ecuación, ROA representa la rentabilidad sobre activos; END corresponde al porcentaje de endeudamiento; TAM representa el tamaño empresarial, medido mediante el logaritmo natural de los activos totales; y SECTOR recoge las diferencias entre actividades económicas mediante variables indicadoras.</p>
+<p>Para reducir la influencia de valores extremos se utilizaron versiones winsorizadas del ROA y del endeudamiento, con límites próximos a los percentiles 1 y 99. Además, se calcularon errores estándar robustos para evaluar la significancia estadística de los coeficientes. Los resultados se interpretan como asociaciones estadísticas y no como efectos causales.</p>
+</section>
+</section>
+<section id="resultados-y-análisis" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Resultados y análisis</h1>
+<section id="diagnóstico-financiero" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="diagnóstico-financiero"><span class="header-section-number">5.1</span> Diagnóstico financiero</h2>
+<p>El análisis descriptivo comprende 145.034 empresas ecuatorianas durante 2024. Los resultados muestran un endeudamiento promedio de 68,85 %, mientras que la mediana fue de 31,89 %. Esta diferencia indica que existen empresas con niveles de endeudamiento considerablemente elevados que influyen en el promedio general.</p>
+<p>En cuanto a la rentabilidad, el ROA promedio fue de -9,35 %, mientras que la mediana se ubicó en 0 %. Esto refleja que, aunque algunas empresas registraron resultados positivos, también existen empresas con pérdidas importantes que afectan la rentabilidad promedio. En conjunto, los resultados evidencian diferencias importantes en la situación financiera de las empresas analizadas.</p>
+<p>La Tabla 1 presenta las principales estadísticas descriptivas de los indicadores financieros.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Indicador</th>
+<th style="text-align: right;">Endeudamiento (%)</th>
+<th style="text-align: right;">ROA (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Observaciones</td>
+<td style="text-align: right;">145.034</td>
+<td style="text-align: right;">145.034</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Media</td>
+<td style="text-align: right;">68,85</td>
+<td style="text-align: right;">-9,35</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mediana</td>
+<td style="text-align: right;">31,89</td>
+<td style="text-align: right;">0,00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Desviación estándar</td>
+<td style="text-align: right;">169,65</td>
+<td style="text-align: right;">84,22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mínimo</td>
+<td style="text-align: right;">0,00</td>
+<td style="text-align: right;">-673,46</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Máximo</td>
+<td style="text-align: right;">1.399,78</td>
+<td style="text-align: right;">88,19</td>
+</tr>
+</tbody>
+</table>
+<p><em>Nota.</em> Estadísticas descriptivas calculadas con la base financiera de empresas ecuatorianas, 2024. Los indicadores corresponden a las variables utilizadas en el análisis econométrico.</p>
+</section>
+<section id="diagnóstico-sectorial" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="diagnóstico-sectorial"><span class="header-section-number">5.2</span> Diagnóstico sectorial</h2>
+<p>El análisis sectorial evidencia diferencias en los niveles de endeudamiento y rentabilidad de las empresas ecuatorianas durante 2024. Entre los sectores con mayor número de observaciones, las actividades de alojamiento y servicios de comidas presentan un endeudamiento promedio de 99,07 % y una rentabilidad sobre activos (ROA) promedio de -20,63 %. Por su parte, las actividades financieras y de seguros registran un endeudamiento promedio de 49,36 % y un ROA de -2,02 %.</p>
+<p>En relación con la distribución empresarial, el comercio al por mayor y menor concentra 34.512 empresas, seguido de las actividades profesionales, científicas y técnicas, con 20.161 empresas, y el transporte y almacenamiento, con 14.644 empresas. Esta distribución muestra que la participación empresarial no es uniforme entre las distintas actividades económicas.</p>
+<p>En conjunto, los resultados reflejan diferencias importantes en la situación financiera de los sectores analizados. Aunque algunas actividades presentan simultáneamente niveles elevados de endeudamiento y rentabilidades negativas, estas diferencias no permiten establecer una relación causal, debido a que cada sector presenta condiciones económicas y empresariales particulares.</p>
+<p>La Figura 2 presenta las diferencias en los niveles de endeudamiento por actividad económica.</p>
+<div id="fig-endeudamiento-sectorial" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-endeudamiento-sectorial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../07_graficos/grafico2_endeudamiento_sectorial.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-endeudamiento-sectorial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Endeudamiento promedio por sector económico
+</figcaption>
+</figure>
+</div>
+<p>La Figura 3 muestra la rentabilidad sobre activos por actividad económica.</p>
+<div id="fig-roa-sectorial" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-roa-sectorial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../07_graficos/grafico3_roa_sectorial.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-roa-sectorial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Rentabilidad promedio por sector económico
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="diagnóstico-empresarial" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="diagnóstico-empresarial"><span class="header-section-number">5.3</span> Diagnóstico empresarial</h2>
+<p>El análisis de las 145.034 empresas ecuatorianas durante 2024 muestra diferencias importantes en la rentabilidad según sus niveles de endeudamiento. Las empresas con endeudamiento de hasta el 50 % registraron el mayor ROA promedio, con 10,25 %, mientras que aquellas con niveles de deuda entre el 50 % y el 100 % presentaron una rentabilidad promedio de 1,53 %.</p>
+<p>Por otra parte, las empresas sin deuda registraron un ROA promedio de -4,31 %. La situación más desfavorable se observa en las empresas cuyo endeudamiento supera el 100 %, con una rentabilidad promedio de -105,70 % y una mediana de -12,74 %. Esto evidencia que los resultados negativos son especialmente pronunciados en el grupo de mayor endeudamiento.</p>
+<p>En conjunto, los resultados muestran que las empresas con niveles moderados de endeudamiento presentan una mayor rentabilidad promedio que aquellas con niveles elevados de deuda. No obstante, estas diferencias representan asociaciones descriptivas y no permiten establecer que el endeudamiento sea la causa directa de las pérdidas empresariales.</p>
+<p>La Tabla 2 presenta los principales resultados según el nivel de endeudamiento.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Nivel de endeudamiento</th>
+<th style="text-align: right;">Empresas</th>
+<th style="text-align: right;">ROA promedio (%)</th>
+<th style="text-align: right;">ROA mediano (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Sin deuda</td>
+<td style="text-align: right;">45.711</td>
+<td style="text-align: right;">-4,31</td>
+<td style="text-align: right;">0,00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hasta 50 %</td>
+<td style="text-align: right;">37.436</td>
+<td style="text-align: right;">10,25</td>
+<td style="text-align: right;">3,43</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Entre 50 % y 100 %</td>
+<td style="text-align: right;">46.611</td>
+<td style="text-align: right;">1,53</td>
+<td style="text-align: right;">1,05</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Más de 100 %</td>
+<td style="text-align: right;">15.276</td>
+<td style="text-align: right;">-105,70</td>
+<td style="text-align: right;">-12,74</td>
+</tr>
+</tbody>
+</table>
+<p><em>Nota.</em> Elaboración propia con datos financieros de empresas ecuatorianas, 2024.</p>
+</section>
+<section id="resultados-econométricos" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="resultados-econométricos"><span class="header-section-number">5.4</span> Resultados econométricos</h2>
+<p>Los resultados de los modelos de mínimos cuadrados ordinarios (MCO) muestran una relación negativa y estadísticamente significativa entre el endeudamiento y la rentabilidad de las empresas ecuatorianas durante 2024. En el Modelo 1, el coeficiente del endeudamiento fue de -0,2919, lo que indica que un aumento de un punto porcentual en el endeudamiento se asocia con una disminución aproximada de 0,29 puntos porcentuales en el ROA.</p>
+<p>En el Modelo 2, al incorporar el tamaño empresarial y los controles sectoriales, el coeficiente del endeudamiento se mantiene negativo (-0,2891) y estadísticamente significativo al 1 %. Esto evidencia que la relación negativa persiste después de considerar las diferencias de tamaño y actividad económica entre las empresas.</p>
+<p>Por otra parte, el tamaño empresarial presenta un coeficiente positivo de 4,1692, estadísticamente significativo al 1 %. Esto indica que las empresas con mayores activos tienden a registrar una mayor rentabilidad, manteniendo constantes las demás variables del modelo.</p>
+<p>El coeficiente de determinación (R²) aumenta de 0,3458 en el Modelo 1 a 0,3693 en el Modelo 2. Esto significa que la incorporación del tamaño empresarial y los controles sectoriales mejora la capacidad explicativa del modelo. Sin embargo, los resultados representan asociaciones estadísticas y no permiten establecer efectos causales.</p>
+<p><strong>Tabla 3. Resultados de los modelos econométricos</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: right;">Modelo 1</th>
+<th style="text-align: right;">Modelo 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Endeudamiento (%)</td>
+<td style="text-align: right;">-0,2919***</td>
+<td style="text-align: right;">-0,2891***</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Error estándar robusto</td>
+<td style="text-align: right;">(0,0046)</td>
+<td style="text-align: right;">(0,0046)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tamaño empresarial</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">4,1692***</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Error estándar robusto</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">(0,0707)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Controles sectoriales</td>
+<td style="text-align: right;">No</td>
+<td style="text-align: right;">Sí</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">R²</td>
+<td style="text-align: right;">0,3458</td>
+<td style="text-align: right;">0,3693</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Observaciones</td>
+<td style="text-align: right;">145.034</td>
+<td style="text-align: right;">145.033</td>
+</tr>
+</tbody>
+</table>
+<p><em>Nota.</em> Errores estándar robustos HC1 entre paréntesis. *** indica significancia estadística al 1 %. Elaboración propia con datos financieros de empresas ecuatorianas, 2024.</p>
+</section>
+<section id="pruebas-de-robustez" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="pruebas-de-robustez"><span class="header-section-number">5.5</span> Pruebas de robustez</h2>
+<p>Para comprobar la estabilidad de los resultados econométricos, se realizaron tres estimaciones. La primera utiliza variables winsorizadas entre los percentiles 1 y 99, la segunda considera los datos sin winsorizar y la tercera incluye únicamente empresas con activos iguales o superiores a 1.000 dólares.</p>
+<p>Los resultados muestran que el endeudamiento mantiene una relación negativa con la rentabilidad en las tres estimaciones. El modelo winsorizado presenta un coeficiente de -0,2891, mientras que el modelo sin winsorizar registra -0,0596. Por su parte, al considerar empresas con activos de al menos 1.000 dólares, el coeficiente alcanza -0,6575.</p>
+<p><strong>Tabla 4. Pruebas de robustez</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Modelo</th>
+<th style="text-align: right;">Coeficiente</th>
+<th style="text-align: right;">Error robusto</th>
+<th style="text-align: right;">Valor p</th>
+<th style="text-align: right;">Empresas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Winsorizado 1 %-99 %</td>
+<td style="text-align: right;">-0,2891</td>
+<td style="text-align: right;">0,0046</td>
+<td style="text-align: right;">&lt;0,001</td>
+<td style="text-align: right;">145.033</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sin winsorizar</td>
+<td style="text-align: right;">-0,0596</td>
+<td style="text-align: right;">0,0064</td>
+<td style="text-align: right;">&lt;0,001</td>
+<td style="text-align: right;">145.033</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Activos &gt;= 1.000 USD</td>
+<td style="text-align: right;">-0,6575</td>
+<td style="text-align: right;">0,2712</td>
+<td style="text-align: right;">0,0153</td>
+<td style="text-align: right;">111.901</td>
+</tr>
+</tbody>
+</table>
+<p><em>Nota.</em> Elaboración propia con información financiera de empresas ecuatorianas, 2024.</p>
+<p>Desde el punto de vista económico, estos resultados indican que las empresas con mayores niveles de endeudamiento tienden a presentar una menor rentabilidad sobre sus activos. Sin embargo, las diferencias entre los coeficientes muestran que la magnitud de esta relación cambia al modificar el tratamiento de los valores extremos y la muestra de empresas. Por lo tanto, aunque la asociación negativa se mantiene, no se puede afirmar que el endeudamiento sea la causa directa de una menor rentabilidad.</p>
+</section>
+</section>
+<section id="discusión" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Discusión</h1>
+<p>Los resultados de esta investigación muestran una relación negativa entre el endeudamiento y la rentabilidad de las empresas ecuatorianas durante 2024. En el modelo econométrico que incorpora el tamaño empresarial y el sector económico, el coeficiente del endeudamiento fue de -0,2891. Esto significa que, dentro de la muestra analizada y manteniendo constantes las variables de control, un aumento de un punto porcentual en el indicador de endeudamiento se asocia con una disminución aproximada de 0,2891 puntos porcentuales en la rentabilidad sobre activos.</p>
+<p>Este resultado puede interpretarse desde las teorías de estructura de capital. <span class="citation" data-cites="myers_capital_1984">Myers (<a href="#ref-myers_capital_1984" role="doc-biblioref">1984</a>)</span> plantea que las decisiones de financiamiento empresarial deben analizarse considerando los costos y beneficios asociados con la deuda. Desde esta perspectiva, el endeudamiento puede facilitar el financiamiento de las actividades empresariales, pero también generar compromisos que afectan los resultados financieros. Por ello, una mayor participación de las obligaciones dentro de los activos no necesariamente se relaciona con una mayor rentabilidad.</p>
+<p>Por otra parte, <span class="citation" data-cites="modigliani_cost_1958">Modigliani &amp; Miller (<a href="#ref-modigliani_cost_1958" role="doc-biblioref">1958</a>)</span> constituye una referencia fundamental para comprender la relación entre la estructura de financiamiento y el valor empresarial bajo determinados supuestos teóricos. Los resultados encontrados en Ecuador no permiten comprobar directamente dicha teoría, pero muestran la importancia de considerar las condiciones financieras observadas en las empresas al estudiar la relación entre deuda y rentabilidad.</p>
+<p>En relación con la evidencia empírica, <span class="citation" data-cites="abor_effect_2005">Abor (<a href="#ref-abor_effect_2005" role="doc-biblioref">2005</a>)</span> encontró que la relación entre estructura de capital y rentabilidad puede variar según la composición del endeudamiento. Aunque su investigación corresponde a empresas de Ghana y utiliza un contexto diferente, permite reconocer que los resultados financieros asociados con la deuda no son necesariamente iguales entre empresas y países. En nuestro estudio, la asociación negativa observada debe interpretarse considerando las características particulares de las empresas ecuatorianas.</p>
+<p>El diagnóstico empresarial también muestra diferencias importantes según los niveles de endeudamiento. Las empresas con endeudamiento positivo de hasta el 50 % registraron una rentabilidad media de 10,25 %, mientras que aquellas con endeudamiento superior al 100 % presentaron una rentabilidad media de -105,70 %. Estas diferencias evidencian que los grupos empresariales con mayores obligaciones respecto a sus activos presentan, en promedio, resultados financieros más desfavorables. Sin embargo, estos valores también pueden estar influenciados por empresas con pérdidas elevadas.</p>
+<p>Las pruebas de robustez refuerzan parcialmente los resultados del modelo principal, debido a que el coeficiente del endeudamiento conserva su signo negativo en las tres estimaciones. No obstante, su magnitud cambia considerablemente cuando se utilizan datos sin winsorizar o se restringe la muestra a empresas con activos de al menos 1.000 dólares. Esto indica que los resultados son sensibles al tratamiento de los valores extremos y a la composición de la muestra.</p>
+<p>Finalmente, es importante reconocer que esta investigación utiliza información correspondiente a un solo año. Por lo tanto, los resultados permiten identificar asociaciones estadísticas, pero no establecer que un mayor endeudamiento provoque directamente una menor rentabilidad. También es posible que las empresas con baja rentabilidad recurran a mayores niveles de financiamiento externo. En consecuencia, futuras investigaciones podrían incorporar información de varios años y métodos que permitan examinar con mayor profundidad la dirección de esta relación.</p>
+</section>
+<section id="conclusiones" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Conclusiones</h1>
+<p>La presente investigación permitió analizar la relación entre el endeudamiento y la rentabilidad de las empresas ecuatorianas durante 2024, utilizando información financiera de 145.034 empresas. Los resultados muestran que existe una asociación negativa y estadísticamente significativa entre el nivel de endeudamiento y la rentabilidad sobre activos (ROA).</p>
+<p>El modelo econométrico que incorpora controles por tamaño empresarial y sector económico presentó un coeficiente de -0,2891 para el endeudamiento. Esto indica que, manteniendo constantes las variables consideradas, las empresas con mayores niveles de endeudamiento tienden a registrar una menor rentabilidad. Sin embargo, esta relación debe interpretarse como una asociación estadística y no como un efecto causal.</p>
+<p>El análisis empresarial permitió identificar diferencias importantes entre los niveles de endeudamiento. Las empresas con endeudamiento positivo de hasta el 50 % registraron una rentabilidad media de 10,25 %, mientras que aquellas cuyo endeudamiento superó el 100 % presentaron una rentabilidad media de -105,70 %. Estos resultados evidencian que los grupos con mayores obligaciones respecto a sus activos muestran resultados financieros más desfavorables en promedio.</p>
+<p>Las pruebas de robustez confirmaron que la relación negativa se mantiene bajo las tres especificaciones analizadas. No obstante, las diferencias en la magnitud de los coeficientes muestran que los resultados son sensibles al tratamiento de los valores extremos y a la composición de la muestra. Por ello, es importante considerar estas características al interpretar las estimaciones.</p>
+<p>En conjunto, los hallazgos permiten comprender mejor la relación entre la estructura de financiamiento y la rentabilidad empresarial en Ecuador. La investigación también presenta limitaciones, principalmente porque utiliza información de un solo año y no permite identificar relaciones causales. Para futuras investigaciones sería conveniente incorporar datos de varios períodos y analizar las diferencias entre sectores y tamaños empresariales con mayor profundidad.</p>
+<style>
+a[role='doc-biblioref'], a[role='doc-biblioref']:visited {
+  color: #222222 !important;
+  text-decoration: none !important;
+}
+</style>
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referencias</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-abor_effect_2005" class="csl-entry" role="listitem">
+Abor, J. (2005). The effect of capital structure on profitability: an empirical analysis of listed firms in <span>Ghana</span>. <em>The Journal of Risk Finance</em>, <em>6</em>(5), 438-445. <a href="https://doi.org/10.1108/15265940510633505">https://doi.org/10.1108/15265940510633505</a>
+</div>
+<div id="ref-berger_capital_2006" class="csl-entry" role="listitem">
+Berger, A. N., &amp; Bonaccorsi di Patti, E. (2006). Capital structure and firm performance: A new approach to testing agency theory and an application to the banking industry. <em>Journal of Banking and Finance</em>, <em>30</em>, 1065-1102. <a href="https://doi.org/10.1016/j.jbankfin.2005.05.015">https://doi.org/10.1016/j.jbankfin.2005.05.015</a>
+</div>
+<div id="ref-chadha_capital_2016" class="csl-entry" role="listitem">
+Chadha, S., &amp; Sharma, A. K. (2016). Capital Structure and Firm Performance: Empirical Evidence from India. <em>Vision: The Journal of Business Perspective</em>, <em>19</em>, 295-302. <a href="https://doi.org/10.1177/0972262915610852">https://doi.org/10.1177/0972262915610852</a>
+</div>
+<div id="ref-davydov_debt_2016" class="csl-entry" role="listitem">
+Davydov, D. (2016). Debt structure and corporate performance in emerging markets. <em>Research in International Business and Finance</em>, <em>38</em>, 299-311. <a href="https://doi.org/10.1016/j.ribaf.2016.04.005">https://doi.org/10.1016/j.ribaf.2016.04.005</a>
+</div>
+<div id="ref-gonzalez_leverage_2013" class="csl-entry" role="listitem">
+Gonzalez, V. M. (2013). Leverage and corporate performance: International evidence. <em>International Review of Economics and Finance</em>, <em>25</em>, 169-184. <a href="https://doi.org/10.1016/j.iref.2012.07.005">https://doi.org/10.1016/j.iref.2012.07.005</a>
+</div>
+<div id="ref-le_capital_2017" class="csl-entry" role="listitem">
+Le, T. P. V., &amp; Phan, T. B. N. (2017). Capital structure and firm performance: Empirical evidence from a small transition country. <em>Research in International Business and Finance</em>, <em>42</em>, 710-726. <a href="https://doi.org/10.1016/j.ribaf.2017.07.012">https://doi.org/10.1016/j.ribaf.2017.07.012</a>
+</div>
+<div id="ref-mallick_financing_2011" class="csl-entry" role="listitem">
+Mallick, S., &amp; Yang, Y. (2011). Sources of Financing, Profitability and Productivity: First Evidence from Matched Firms. <em>Financial Markets, Institutions and Instruments</em>, <em>20</em>, 221-252. <a href="https://doi.org/10.1111/j.1468-0416.2011.00170.x">https://doi.org/10.1111/j.1468-0416.2011.00170.x</a>
+</div>
+<div id="ref-margaritis_efficiency_2007" class="csl-entry" role="listitem">
+Margaritis, D., &amp; Psillaki, M. (2007). Capital Structure and Firm Efficiency. <em>Journal of Business Finance and Accounting</em>, <em>34</em>, 1447-1469. <a href="https://doi.org/10.1111/j.1468-5957.2007.02056.x">https://doi.org/10.1111/j.1468-5957.2007.02056.x</a>
+</div>
+<div id="ref-margaritis_ownership_2010" class="csl-entry" role="listitem">
+Margaritis, D., &amp; Psillaki, M. (2010). Capital structure, equity ownership and firm performance. <em>Journal of Banking and Finance</em>, <em>34</em>, 621-632. <a href="https://doi.org/10.1016/j.jbankfin.2009.08.023">https://doi.org/10.1016/j.jbankfin.2009.08.023</a>
+</div>
+<div id="ref-modigliani_cost_1958" class="csl-entry" role="listitem">
+Modigliani, F., &amp; Miller, M. H. (1958). The <span>Cost</span> of <span>Capital</span>, <span>Corporation</span> <span>Finance</span> and the <span>Theory</span> of <span>Investment</span>. <em>The American Economic Review</em>, <em>48</em>(3), 261-297. <a href="https://doi.org/10.2307/1809766">https://doi.org/10.2307/1809766</a>
+</div>
+<div id="ref-myers_capital_1984" class="csl-entry" role="listitem">
+Myers, S. C. (1984). The <span>Capital</span> <span>Structure</span> <span>Puzzle</span>. <em>The Journal of Finance</em>, <em>39</em>(3), 574-592. <a href="https://doi.org/10.1111/j.1540-6261.1984.tb03646.x">https://doi.org/10.1111/j.1540-6261.1984.tb03646.x</a>
+</div>
+<div id="ref-myers_corporate_1984" class="csl-entry" role="listitem">
+Myers, S. C., &amp; Majluf, N. S. (1984). Corporate financing and investment decisions when firms have information that investors do not have. <em>Journal of Financial Economics</em>, <em>13</em>(2), 187-221. <a href="https://doi.org/10.1016/0304-405X(84)90023-0">https://doi.org/10.1016/0304-405X(84)90023-0</a>
+</div>
+<div id="ref-nguyen_relationship_2023" class="csl-entry" role="listitem">
+Nguyen, S. L., Pham, C. D., Truong, T. V., Phi, T. V., Le, L. T., &amp; Vu, T. T. T. (2023). Relationship between Capital Structure and Firm Profitability: Evidence from Vietnamese Listed Companies. <em>International Journal of Financial Studies</em>, <em>11</em>, 45. <a href="https://doi.org/10.3390/ijfs11010045">https://doi.org/10.3390/ijfs11010045</a>
+</div>
+<div id="ref-rajan_what_1995" class="csl-entry" role="listitem">
+Rajan, R. G., &amp; Zingales, L. (1995). What <span>Do</span> <span>We</span> <span>Know</span> about <span>Capital</span> <span>Structure</span>? <span>Some</span> <span>Evidence</span> from <span>International</span> <span>Data</span>. <em>The Journal of Finance</em>, <em>50</em>(5), 1421-1460. <a href="https://doi.org/10.1111/j.1540-6261.1995.tb05184.x">https://doi.org/10.1111/j.1540-6261.1995.tb05184.x</a>
+</div>
+</div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

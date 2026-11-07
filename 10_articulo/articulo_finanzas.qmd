@@ -252,3 +252,16 @@ a[role='doc-biblioref'], a[role='doc-biblioref']:visited {
 </style>
 ```
 
+
+
+## Análisis de varianza (ANOVA)
+
+La tabla presenta el análisis de varianza del modelo de rentabilidad empresarial, considerando el endeudamiento, el tamaño y el sector económico.
+
+```{r}
+#| echo: false
+#| warning: false
+knitr::kable(read.csv('../08_tablas/tabla_anova.csv', check.names = FALSE), digits = 3)
+```
+
+Los resultados muestran que el endeudamiento, el tamaño y el sector económico presentan significancia estadística (p < 0,001). Esta tabla corresponde a un análisis secuencial de varianza y no demuestra causalidad.
